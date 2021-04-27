@@ -1,5 +1,8 @@
 
 import '../assets/styles.css'
+import book1 from '../assets/images/book1.jpg'
+import book2 from '../assets/images/book2.jpg'
+import book3 from '../assets/images/book3.jpg'
 
 let container   = document.getElementsByClassName("container")[0]
 let modal       = document.getElementById("modal")
