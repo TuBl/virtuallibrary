@@ -1,4 +1,6 @@
 
+import '../assets/styles.css'
+
 let container   = document.getElementsByClassName("container")[0]
 let modal       = document.getElementById("modal")
 let previousElement
