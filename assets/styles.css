@@ -44,40 +44,49 @@ img {
   transition: visibility 300ms ease-in, height 300ms ease-in, width 300ms ease-in;
 }
 
-.modal p {
-  padding: 1rem;
-}
-
 .modal--isvisible {
   visibility: visible;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 20%;
   height: 100vh;
   width: 100vw;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% auto;
+      grid-template-columns: 50% auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "img    title" "img    description";
   background: #F5F5FC;
   opacity: 1;
   -webkit-transition: visibility 300ms ease-in, height 300ms ease-in, width 300ms ease-in;
   transition: visibility 300ms ease-in, height 300ms ease-in, width 300ms ease-in;
 }
 
-.modal img {
+.modal__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+  color: #7A5BF5;
+}
+
+.modal__description {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: description;
+  padding: 1rem;
+  padding-left: 0rem;
+}
+
+.modal__image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: img;
   height: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  max-width: 350px;
+  place-self: center;
 }
 
 .modal span {
@@ -306,14 +315,17 @@ nav ul li:hover {
   color: #fefefe;
 }
 
-.books-container__book--is-clicked {
-  background: red;
-}
-
 footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: footer;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer strong {
+  color: #7A5BF5;
 }
 
 @media only screen and (max-width: 900px) {
